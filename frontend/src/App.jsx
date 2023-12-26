@@ -1,10 +1,17 @@
+import {Routes, Route} from 'react-router-dom'
+import Home from './components/Home'
+import Foot from './components/Foot'
 
 function App() {
   
 
   return (
     <>
-      <div>
+      <div className='App'>
+        <Routes>
+          <Route path=""  element={<Home/>}/>
+          <Route path="/Foot"  element={<Foot/>}/>
+        </Routes>
         
       </div>
     </>
