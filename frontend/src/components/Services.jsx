@@ -1,4 +1,4 @@
-const Foot = () =>{
+const Services = () =>{
     return(
         <>
             <div>Botter Yep!</div>
@@ -6,4 +6,4 @@ const Foot = () =>{
     )
 }
 
-export default Foot;
+export default Services;
