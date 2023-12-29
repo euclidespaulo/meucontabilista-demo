@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
-import Home from './components/Home'
-import Foot from './components/Foot'
+import Home from './Components/Home'
+import Foot from './Components/Services'
 
 function App() {
   
