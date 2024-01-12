@@ -1,9 +1,9 @@
 from django.db import models
 
 class Company(models.Model):
-    name =  models.CharField(max_Length =100)
-    industry =  models.CharField(max_Length =20)
-    location =  models.CharField(max_Length =20)
+    name =  models.CharField(max_length =100)
+    industry =  models.CharField(max_length =20)
+    location =  models.CharField(max_length =20)
     
     def __str__(self):
         return self.name 
@@ -25,34 +25,26 @@ class Appointment(models.Model):
     date = models.DateField()
     time = models.TimeField()
     
-    opt1 = ""
-    opt2 = ""
-    opt3 = ""
-    opt = {
-        opt1: "Scheduled",
-        opt2: "Completed",
-        opt3: "Canceled"
-    }
+ 
+    opt = [
+        ("opt1", "Scheduled"),
+        ("opt", "Completed"),
+        ("opt3", "Canceled"),
+    ]
     status = models.CharField(
         max_length=10,
-        choices=opt,
-        default=opt1
+        choices=opt
     )
     
-    option1 = ""
-    option2 = ""
-    option3 = ""
-    
-    option = {
-        option1: "Zomm",
-        option2: "Office",
-        option3: " Phone"
-            }
+    option = [
+        ("option1", "Zomm"),
+        ("option2","Office"),
+        ("option3", " Phone"),
+    ]
     
     location = models.CharField(
         max_length=10, 
-        choices=option, 
-        default=option1
+        choices = option
     )
         
     user = models.ForeignKey(User, on_delete = models.CASCADE)
