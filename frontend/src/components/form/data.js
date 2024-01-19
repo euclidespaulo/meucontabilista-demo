@@ -1,4 +1,4 @@
-export const expertise = [
+const expertise = [
     {id: 1,
      field:'Accounting'},
     
