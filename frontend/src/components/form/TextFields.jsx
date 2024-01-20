@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import {Controller} from 'react-hook-form'
 
 export default function TextFields (props) {
-  const {label, placeholder, name, width, control} = props
+  const {label, name, control} = props
   return (
       
     <Controller
@@ -16,11 +16,12 @@ export default function TextFields (props) {
       }) => (
 
       <TextField 
-      sx={{width:{width}}}
-      id="standard-basic" 
+      id="outlined-basic" 
+      sx={{width:'140%', marginTop:1}}
       label={label}
-      variant="standard" 
-      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      variant="outlined"
       />
 
       )}
