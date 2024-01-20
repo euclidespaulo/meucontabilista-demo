@@ -4,7 +4,7 @@ import { Controller } from 'react-hook-form';
 
 
 export default function MultilineTextFields (props) {
-  const {label, placeholder, width, name, control} = props
+  const {label, width, name, control} = props
   return (
       
     <Controller
@@ -18,14 +18,13 @@ export default function MultilineTextFields (props) {
 
       
       <TextField
-      sx={{width:{width}}}
-      id="standard-multiline-static"
+      sx={{width:{width}, marginTop:1}}
+      id="outlined-multiline-static"
       label={label}
+      value={value}
+      onChange={onChange}
       multiline
       rows={4}
-      defaultValue="Default Value"
-      variant="standard"
-      placeholder={placeholder}
     />
       
 

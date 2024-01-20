@@ -16,7 +16,8 @@ export default function Datepicker(props) {
       render = {({
         field: onChange, value,
       }) => (
-        <DateTimePicker label={label}  sx={{width:{width}}} />
+        <DateTimePicker label={label} value={value}
+        onChange={onChange} sx={{width:'120%', marginTop:1}} />
       )}
       />
     </LocalizationProvider>

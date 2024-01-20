@@ -7,16 +7,16 @@ import { Controller } from 'react-hook-form';
 
 export default function Selects(props) {
   const {label, name,width, control} = props
-  const [age, setAge] = React.useState('');
+  const [size, setSize] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setSize(event.target.value);
   };
 
   return (
     <div>
-      <FormControl variant="standard"  sx={{width:{width}}}>
-        <InputLabel id="demo-simple-select-standard-label">{label}</InputLabel>
+      <FormControl   sx={{width:{width}}} fullWidth>
+        <InputLabel >{label}</InputLabel>
 
             <Controller
                     name = {name}
@@ -30,16 +30,15 @@ export default function Selects(props) {
                 <Select
                         labelId="demo-simple-select-standard-label"
                         id="demo-simple-select-standard"
-                        value={age}
+                        value={value}
                         onChange={handleChange}
-                        label="Age"
+                        label={label}
+                        sx={{width:'291%', marginTop:1}}
                     >
-                        <MenuItem value="">
-                        <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={10}>1-10</MenuItem>
+                        <MenuItem value={20}>11-50</MenuItem>
+                        <MenuItem value={30}>51-100</MenuItem>
+                        <MenuItem value={40}>100+</MenuItem>
               </Select>
             )}
             />
