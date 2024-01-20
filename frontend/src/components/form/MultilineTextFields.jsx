@@ -5,35 +5,21 @@ import { Controller } from 'react-hook-form';
 
 export default function MultilineTextFields (props) {
   const {label, width, name, control} = props
-  return (
-      
+  return ( 
     <Controller
-      name = {name}
-      control = {control}
-      render = {({
-        field: onChange, value,
-        fieldState: {error},
-        formState,
-      }) => (
-
-      
+      name={name}
+      control={control}
+      render={({ field, fieldState: { error }, formState }) => (
       <TextField
       sx={{width:{width}, marginTop:1}}
       id="outlined-multiline-static"
       label={label}
-      value={value}
-      onChange={onChange}
+      value={field.value}
+      onChange={(e) => field.onChange(e.target.value)}
       multiline
       rows={4}
     />
-      
-
-      
-
       )}
-
-      
-
     />
   
   );
