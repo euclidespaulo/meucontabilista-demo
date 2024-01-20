@@ -23,7 +23,7 @@ const Navbar = () => {
         <BottomNavigationAction sx={{color: '#707a86',fontWeight: 'bold', fontSize:20}} label="Meucontabilista"  component={Link} to="" selected={"" === path} />
         <BottomNavigationAction sx={{color: '#707a86', fontSize:20}} label="Services"  component={Link} to="/Services" selected={"/Services" === path}/>
         <BottomNavigationAction sx={{color: '#707a86',fontSize:20}} label="Contact"  component={Link} to="/Contact" selected={"/Contact" === path}/>
-        <BottomNavigationAction sx={{color: '#707a86',fontSize:20}} label="Booking"  component={Link} to="/Booking" selected={"/Booking" === path}/>
+        <BottomNavigationAction sx={{color: '#707a86',fontSize:20}} label="Book"  component={Link} to="/Book" selected={"/Book" === path}/>
       </BottomNavigation>
     </Box>
   );

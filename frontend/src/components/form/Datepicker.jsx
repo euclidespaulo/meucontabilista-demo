@@ -5,20 +5,21 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { Controller } from 'react-hook-form';
 
 export default function Datepicker(props) {
-    const {label, name, control, width} = props
+  const { label, name, control } = props;
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-
       <Controller
-      name = {name}
-      control = {control}
-      render = {({
-        field: onChange, value,
-      }) => (
-        <DateTimePicker label={label} value={value}
-        onChange={onChange} sx={{width:'120%', marginTop:1}} />
-      )}
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <DateTimePicker
+            label={label}
+            value={field.value || null}  
+            onChange={(date) => field.onChange(date)}  
+            sx={{ width: '120%', marginTop: 1 }}
+          />
+        )}
       />
     </LocalizationProvider>
   );
