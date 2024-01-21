@@ -11,18 +11,17 @@ const Navbar = () => {
   const path = location.pathname
 
   return (
-    <Box sx={{ padding:3, background:'#f5f8fc'}}>
+    <Box sx={{margin:'0', background: '#fff'}}>
       <BottomNavigation
-      sx={{background:'#f5f8fc'}}
+      sx={{background: '#fff'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction sx={{color: '#707a86',fontWeight: 'bold', fontSize:20}} label="Meucontabilista"  component={Link} to="" selected={"" === path} />
+        <BottomNavigationAction sx={{color: '#707a86', fontFamily:'sans-serif', fontWeight: 'bold', fontSize:'90px'}} label="Meucontabilista"  component={Link} to="" selected={"" === path} />
         <BottomNavigationAction sx={{color: '#707a86', fontSize:20}} label="Services"  component={Link} to="/Services" selected={"/Services" === path}/>
-        <BottomNavigationAction sx={{color: '#707a86',fontSize:20}} label="Contact"  component={Link} to="/Contact" selected={"/Contact" === path}/>
         <BottomNavigationAction sx={{color: '#707a86',fontSize:20}} label="Book"  component={Link} to="/Book" selected={"/Book" === path}/>
       </BottomNavigation>
     </Box>
