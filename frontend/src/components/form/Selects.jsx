@@ -21,7 +21,7 @@ export default function Selects(props) {
               id="demo-simple-select-standard"
               {...field}
               label={label}
-              sx={{ width: '291%', marginTop: 1 }}
+              sx={{ width: '285%', marginTop: 1 }}
             >
               <MenuItem value="1-10">1-10</MenuItem>
               <MenuItem value="11-50">11-50</MenuItem>

@@ -14,7 +14,7 @@ const Book = () => {
  return(
     <div style={{paddingRight:'250px', paddingLeft:'250px'}}>
         <form onSubmit={handleSubmit(submission)}>
-            <Box sx={{margin:'12px', padding:8, background:'#c3d9f3', borderRadius:'8px', fontWeight: 'bold' }}>
+            <Box sx={{margin:'12px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
                 <Typography sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
                     BOOK A MEETING
                 </Typography>
@@ -129,4 +129,4 @@ const Book = () => {
     </div>
     )
 }
-export default Booking;
+export default Book;
