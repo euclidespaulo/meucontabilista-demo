@@ -5,16 +5,40 @@ import Selects from "./form/Selects";
 import TextFields from "./form/TextFields";
 import CheckboxComponent from "./form/CheckboxComponent";
 import {useForm} from 'react-hook-form'
+import AxiosInstance from "./Axios";
+import dayjs from "dayjs";
 
 const Book = () => {
     const {handleSubmit, reset, setValue, control} = useForm()
-    const submission = (data) => console.log(data)
+    const submission = async (data) => {
+        try {
+            const StartDate = dayjs(data.Startdate["$d"]).format('YYYY-MM-DDTHH:mm:ssZ');
+            const EndDate = dayjs(data.Enddate["$d"]).format('YYYY-MM-DDTHH:mm:ssZ');
 
+            const response = await AxiosInstance.post(`/appointments/`, {
+                firstname: data.Firstname,
+                lastname: data.Lastname,
+                companyemail: data.companyEmail,
+                companyphone: data.companyPhone,
+                companyname: data.CompanyName,
+                companysize: data.CompanySize,
+                start_date: StartDate,
+                end_date: EndDate,
+                audit_and_assurance: data.AuditandAssurance || false,
+                taxation: data.Taxation || false,
+                financial_analysis: data.FinancialAnalysis || false,
+                comment: data.Multifield,
+            });
+
+        } catch (error) {
+            console.error("Error submitting form:", error);
+        }
+    };
 
  return(
     <div style={{paddingRight:'250px', paddingLeft:'250px'}}>
         <form onSubmit={handleSubmit(submission)}>
-            <Box sx={{margin:'12px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
+            <Box sx={{margin:'12px', marginBottom:'24px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
                 <Typography sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
                     BOOK A MEETING
                 </Typography>
@@ -24,7 +48,7 @@ const Book = () => {
                     <Grid sx={{marginRight:13}}>
                         <Typography sx={{fontWeight: 'bold'}}>First name</Typography>
                         <TextFields
-                            name='First name'
+                            name='Firstname'
                             label='John'
                             control={control}  
                         />
@@ -32,7 +56,7 @@ const Book = () => {
                     <Grid >
                         <Typography sx={{fontWeight: 'bold'}}>Last name</Typography>
                         <TextFields
-                            name='Last name'
+                            name='Lastname'
                             label='Weack'
                             control={control}
                         />
@@ -42,7 +66,7 @@ const Book = () => {
                     <Grid sx={{marginRight:13}}>
                         <Typography sx={{fontWeight: 'bold'}}>Company email</Typography>
                         <TextFields
-                            name='email'
+                            name='companyEmail'
                             label='John@gmail.com'
                             control={control}
                         />
@@ -50,7 +74,7 @@ const Book = () => {
                     <Grid >
                         <Typography sx={{fontWeight: 'bold'}}>Cell phone</Typography>
                         <TextFields
-                            name='phone'
+                            name='companyPhone'
                             label='+1 401 334 7653'
                             control={control}
                         />
@@ -60,8 +84,8 @@ const Book = () => {
                     <Grid sx={{marginRight:13}}>
                         <Typography sx={{fontWeight: 'bold'}}>Company name</Typography>
                         <TextFields
-                            name='Companyname'
-                            label='John@gmail.com'
+                            name='CompanyName'
+                            label='Google'
                             control={control}
                         />
                     </Grid>
@@ -69,7 +93,7 @@ const Book = () => {
                         <Typography sx={{fontWeight: 'bold'}}>Company Size</Typography>
                         <Selects
                             name='CompanySize'
-                            label='1-10'
+                            label='Select'
                             control={control}
                         />
                     </Grid>
@@ -78,7 +102,7 @@ const Book = () => {
                     <Grid sx={{marginRight:8.4}}>
                         <Typography sx={{fontWeight: 'bold'}}>Start Date</Typography>
                         <Datepicker
-                            name='startdate'
+                            name='Startdate'
                             label='Day and time'
                             control={control}
                         />
@@ -86,7 +110,7 @@ const Book = () => {
                     <Grid >
                         <Typography sx={{fontWeight: 'bold'}}>End Date</Typography>
                         <Datepicker
-                            name='enddate'
+                            name='Enddate'
                             label='Day and time'
                             control={control}
                         />
@@ -116,7 +140,7 @@ const Book = () => {
                     <Grid>
                         <Typography sx={{fontWeight: 'bold'}}>How can we help?</Typography>
                         <MultilineTextFields
-                            name='multifield'
+                            name='Multifield'
                             label='Let us know'
                             control={control}
                             width='286%'    
