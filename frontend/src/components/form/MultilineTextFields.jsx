@@ -11,7 +11,7 @@ export default function MultilineTextFields (props) {
       control={control}
       render={({ field, fieldState: { error }, formState }) => (
       <TextField
-      sx={{width:{width}, marginTop:1}}
+      sx={{ width: '100%' }}
       id="outlined-multiline-static"
       label={label}
       value={field.value}

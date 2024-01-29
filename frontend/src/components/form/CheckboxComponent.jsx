@@ -14,6 +14,7 @@ export default function CheckboxComponent(props) {
         <FormControlLabel
           control={<Checkbox {...field} />}
           label={label}
+          sx={{ marginBottom:'15px'}}
         />
       )}
     />

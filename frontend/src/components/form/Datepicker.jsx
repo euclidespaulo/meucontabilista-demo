@@ -17,7 +17,7 @@ export default function Datepicker(props) {
             label={label}
             value={field.value || null}  
             onChange={(date) => field.onChange(date)}  
-            sx={{ width: '120%', marginTop: 1 }}
+            sx={{ width: '100%', marginBottom:'15px'}}
           />
         )}
       />

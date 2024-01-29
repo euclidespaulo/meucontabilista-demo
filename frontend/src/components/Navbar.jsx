@@ -11,9 +11,9 @@ const Navbar = () => {
   const path = location.pathname
 
   return (
-    <Box sx={{margin:'0', background: '#fff'}}>
+    <Box>
       <BottomNavigation
-      sx={{background: '#fff'}}
+      sx={{background: '#f3f7fd'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
