@@ -1,10 +1,11 @@
+import { Box } from '@mui/material';
 import React from 'react';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#fff', padding: '20px', textAlign: 'center' }}>
-      <p>&copy; 2022 Your Company. All rights reserved.</p>
-    </footer>
+    <Box sx={{ backgroundColor: '#fff', padding: '10px', textAlign: 'center' }}>
+      <p>2022 MeuContabilista. All rights reserved.</p>
+    </Box>
   );
 };
 

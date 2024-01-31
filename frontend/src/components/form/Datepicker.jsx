@@ -4,8 +4,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { Controller } from 'react-hook-form';
 
-export default function Datepicker(props) {
-  const { label, name, control } = props;
+export default function Datepicker({ label, name, control }) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>

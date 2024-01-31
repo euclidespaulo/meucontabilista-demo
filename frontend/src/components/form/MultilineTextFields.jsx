@@ -3,8 +3,8 @@ import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
 
 
-export default function MultilineTextFields (props) {
-  const {label, width, name, control} = props
+export default function MultilineTextFields ({label, name, control}) {
+ 
   return ( 
     <Controller
       name={name}

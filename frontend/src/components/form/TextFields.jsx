@@ -2,9 +2,7 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
 
-export default function TextFields(props) {
-  const { label, name, control } = props;
-
+export default function TextFields({ label, name, control }) {
   return (
     <Controller
       name={name}

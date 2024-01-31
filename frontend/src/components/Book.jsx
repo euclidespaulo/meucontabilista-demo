@@ -5,7 +5,7 @@ import Selects from "./form/Selects";
 import TextFields from "./form/TextFields";
 import CheckboxComponent from "./form/CheckboxComponent";
 import {useForm} from 'react-hook-form'
-import AxiosInstance from "./Axios";
+import AxiosInstance from "./api/Axios";
 import dayjs from "dayjs";
 
 const Book = () => {
@@ -36,7 +36,7 @@ const Book = () => {
     };
 
  return(
-    <Stack sx={{paddingTop:'8px', paddingRight:22, paddingLeft:22, background:'#f3f7fd'}}>
+    <Stack sx={{background:'#f3f7fd', paddingTop:'30px', paddingLeft:'200px', paddingRight:'200px'}}>
         <form onSubmit={handleSubmit(submission)}>
             <Box sx={{marginBottom:'24px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
                 <Typography sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
@@ -143,7 +143,6 @@ const Book = () => {
                             name='Multifield'
                             label='Let us know'
                             control={control}
-                            width='100%'    
                         />
                     </Grid>
                 </Grid> 
