@@ -3,10 +3,10 @@ import { Link, useLocation} from 'react-router-dom';
 import {Box} from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import { navList } from '../assets/NavbarList';
+import navList from '../../data/navbarList'
 
 
-const Navbar = () => {
+const NavBar = () => {
   const [value, setValue] = React.useState(0);
   const location = useLocation();
   const path = location.pathname
@@ -29,9 +29,8 @@ const Navbar = () => {
               label={navItem.label}
               component={Link}
               to={navItem.to}
-              //selected={navItem.to === path}//
+              selected={navItem.to === path}
               sx={{ color:'#707a86', fontSize:navItem.fontSize}}
-
             />
           ))
         }
@@ -40,4 +39,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default NavBar;

@@ -1,11 +1,11 @@
 import { Stack, Box, Button, Grid, Typography } from "@mui/material";
-import MultilineTextFields from "./form/MultilineTextFields";
-import Datepicker from "./form/Datepicker";
-import Selects from "./form/Selects";
-import TextFields from "./form/TextFields";
-import CheckboxComponent from "./form/CheckboxComponent";
+import MultilineTextFields from "../Components/form/MultilineTextFields";
+import Datepicker from "../Components/form/Datepicker";
+import Selects from "../Components/form/Selects";
+import TextFields from "../Components/form/TextFields";
+import CheckboxComponent from "../Components/form/CheckboxComponent";
 import {useForm} from 'react-hook-form'
-import AxiosInstance from "./api/Axios";
+import AxiosInstance from '../api/Axios'
 import dayjs from "dayjs";
 
 const Book = () => {
