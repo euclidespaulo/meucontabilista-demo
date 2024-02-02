@@ -1,0 +1,26 @@
+[
+    {
+      "title": "Insightful Reporting Solutions",
+      "description": "Escape the complexities of spreadsheets and tedious CSV handling. Elevate your financial modeling experience by effortlessly sharing real-time reports that empower faster and smarter decision-making in just minutes.",
+      "details": [" Custom Financial Reports: Receive meticulously crafted financial reports customized to your unique business requirements, offering a deep insight into your company's performance.", 
+        "Comparative Analysis: Benchmark your financial standing against industry standards with our comparative analysis reports, providing valuable insights for strategic planning."
+      ],
+      "imageSrc":"src/assets/Sheet1.svg",
+      "reverse":false
+    },
+    {
+      "title": "Optimize Your Financial Operations",
+      "description":"Embark on a journey to streamline and enhance your financial processes with our comprehensive services. Our collaborative efforts ensure meticulous coordination and supervision of all accounting facets. Leveraging the information extracted from your company's documents, we are dedicated to delivering the following in either Kwanza or USD:",
+      "details": [
+        "Analytical Balance and Income Statement by nature",
+        "General and Analytical Accounting Ledger",
+        "Customer and Supplier Ledger",
+        "Bank account reconciliations",
+        "Fixed Assets and accruals and deferrals",
+        "Reporting in a specific format, if applicable"
+      ],
+
+      "imageSrc":"src/assets/Chart.svg",
+      "reverse":true
+    }
+  ]

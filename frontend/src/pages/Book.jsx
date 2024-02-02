@@ -1,11 +1,11 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import MultilineTextFields from "./form/MultilineTextFields";
-import Datepicker from "./form/Datepicker";
-import Selects from "./form/Selects";
-import TextFields from "./form/TextFields";
-import CheckboxComponent from "./form/CheckboxComponent";
+import { Stack, Box, Button, Grid, Typography } from "@mui/material";
+import MultilineTextFields from "../Components/form/MultilineTextFields";
+import Datepicker from "../Components/form/Datepicker";
+import Selects from "../Components/form/Selects";
+import TextFields from "../Components/form/TextFields";
+import CheckboxComponent from "../Components/form/CheckboxComponent";
 import {useForm} from 'react-hook-form'
-import AxiosInstance from "./Axios";
+import AxiosInstance from '../api/Axios'
 import dayjs from "dayjs";
 
 const Book = () => {
@@ -36,25 +36,25 @@ const Book = () => {
     };
 
  return(
-    <div style={{paddingRight:'250px', paddingLeft:'250px'}}>
+    <Stack sx={{background:'#f3f7fd', paddingTop:'30px', paddingLeft:'200px', paddingRight:'200px'}}>
         <form onSubmit={handleSubmit(submission)}>
-            <Box sx={{margin:'12px', marginBottom:'24px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
+            <Box sx={{marginBottom:'24px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
                 <Typography sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
                     BOOK A MEETING
                 </Typography>
             </Box>
-        <Box sx={{margin: '12px', boxShadow: 2, padding: 5, borderRadius: '8px', background: '#ffffff' }}>
-                <Grid  sx={{display:'flex', flexDirection:'row'}}>   
-                    <Grid sx={{marginRight:13}}>
-                        <Typography sx={{fontWeight: 'bold'}}>First name</Typography>
+            <Stack sx={{padding:'30px', boxShadow: 2, borderRadius: '8px', background: '#ffffff' }} direction='column' >
+                <Grid container spacing={3}>   
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{margin:'6px', textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>First name</Typography>
                         <TextFields
                             name='Firstname'
                             label='John'
                             control={control}  
                         />
                     </Grid>
-                    <Grid >
-                        <Typography sx={{fontWeight: 'bold'}}>Last name</Typography>
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{margin:'6px',textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Last name</Typography>
                         <TextFields
                             name='Lastname'
                             label='Weack'
@@ -62,17 +62,17 @@ const Book = () => {
                         />
                     </Grid>
                 </Grid> 
-                <Grid  sx={{display:'flex', flexDirection:'row', marginTop:2}}>   
-                    <Grid sx={{marginRight:13}}>
-                        <Typography sx={{fontWeight: 'bold'}}>Company email</Typography>
+                <Grid container spacing={3} >   
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{margin:'6px', textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Company email</Typography>
                         <TextFields
                             name='companyEmail'
                             label='John@gmail.com'
                             control={control}
                         />
                     </Grid>
-                    <Grid >
-                        <Typography sx={{fontWeight: 'bold'}}>Cell phone</Typography>
+                    <Grid item xs={12} sm={6} >
+                        <Typography sx={{margin:'6px', textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Cell phone</Typography>
                         <TextFields
                             name='companyPhone'
                             label='+1 401 334 7653'
@@ -80,17 +80,17 @@ const Book = () => {
                         />
                     </Grid>
                 </Grid> 
-                <Grid  sx={{display:'flex', flexDirection:'row', marginTop:2}}>   
-                    <Grid sx={{marginRight:13}}>
-                        <Typography sx={{fontWeight: 'bold'}}>Company name</Typography>
+                <Grid container spacing={3} >   
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Company name</Typography>
                         <TextFields
                             name='CompanyName'
                             label='Google'
                             control={control}
                         />
                     </Grid>
-                    <Grid >
-                        <Typography sx={{fontWeight: 'bold'}}>Company Size</Typography>
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Company Size</Typography>
                         <Selects
                             name='CompanySize'
                             label='Select'
@@ -98,17 +98,17 @@ const Book = () => {
                         />
                     </Grid>
                 </Grid> 
-                <Grid  sx={{display:'flex', flexDirection:'row', marginTop:2}}>   
-                    <Grid sx={{marginRight:8.4}}>
-                        <Typography sx={{fontWeight: 'bold'}}>Start Date</Typography>
+                <Grid container spacing={3}>   
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Start Date</Typography>
                         <Datepicker
                             name='Startdate'
                             label='Day and time'
                             control={control}
                         />
                     </Grid>
-                    <Grid >
-                        <Typography sx={{fontWeight: 'bold'}}>End Date</Typography>
+                    <Grid item xs={12} sm={6}>
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>End Date</Typography>
                         <Datepicker
                             name='Enddate'
                             label='Day and time'
@@ -116,9 +116,9 @@ const Book = () => {
                         />
                     </Grid>
                 </Grid> 
-                <Grid sx={{display:'flex', flexDirection:'row', marginTop:1}}>
-                    <Grid>
-                        <Typography sx={{fontWeight: 'bold'}}>Interested fields</Typography>
+                <Grid container spacing={3}>
+                    <Grid item >
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>Interested fields</Typography>
                         <CheckboxComponent
                             name='AuditandAssurance'
                             label='Audit and Assurance'
@@ -136,21 +136,20 @@ const Book = () => {
                         />
                     </Grid>
                 </Grid>
-                <Grid  sx={{display:'flex', flexDirection:'row', marginTop:1}}>   
-                    <Grid>
-                        <Typography sx={{fontWeight: 'bold'}}>How can we help?</Typography>
+                <Grid container>   
+                    <Grid item xs={12} sm={12}>
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}>How can we help?</Typography>
                         <MultilineTextFields
                             name='Multifield'
                             label='Let us know'
                             control={control}
-                            width='286%'    
                         />
                     </Grid>
                 </Grid> 
                 <Button variant="contained" type="submit" sx={{width:'100%', marginTop:2}}>Book a meeting</Button>
-        </Box>
+            </Stack>
         </form> 
-    </div>
+    </Stack>
     )
 }
 export default Book;

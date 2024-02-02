@@ -4,8 +4,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { Controller } from 'react-hook-form';
 
-export default function Datepicker(props) {
-  const { label, name, control } = props;
+export default function Datepicker({ label, name, control }) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -17,7 +16,7 @@ export default function Datepicker(props) {
             label={label}
             value={field.value || null}  
             onChange={(date) => field.onChange(date)}  
-            sx={{ width: '120%', marginTop: 1 }}
+            sx={{ width: '100%', marginBottom:'15px'}}
           />
         )}
       />

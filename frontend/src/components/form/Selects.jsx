@@ -5,12 +5,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Controller } from 'react-hook-form';
 
-export default function Selects(props) {
-  const { label, name, width, control } = props;
+export default function Selects({ label, name, control }) {
 
   return (
     <div>
-      <FormControl sx={{ width: { width } }} fullWidth>
+      <FormControl sx={{ width: '100%'}} fullWidth>
         <InputLabel>{label}</InputLabel>
         <Controller
           name={name}
@@ -21,7 +20,6 @@ export default function Selects(props) {
               id="demo-simple-select-standard"
               {...field}
               label={label}
-              sx={{ width: '285%', marginTop: 1 }}
             >
               <MenuItem value="1-10">1-10</MenuItem>
               <MenuItem value="11-50">11-50</MenuItem>
