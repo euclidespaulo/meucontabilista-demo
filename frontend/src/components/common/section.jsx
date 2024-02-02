@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography } from "@mui/material";
-import SectionThemeProvider from '../../styles/SectionThemeProvider';
+import SectionThemeProvider from '../../styles/home/sectionThemeProvider';
 
 
 
@@ -9,9 +9,9 @@ const Section = ({ title, description, imageSrc, details, reverse }) => {
     <SectionThemeProvider>
       <Grid 
         container 
+        spacing={2}
         sx={{ 
             padding:'50px',
-            height: '550px', 
             background: reverse ? '#f3f7fd' : '#fff' 
           }}
         >
@@ -24,7 +24,7 @@ const Section = ({ title, description, imageSrc, details, reverse }) => {
           </Typography>
           {details && (
           <Typography variant="body1">
-            <ul  style ={{ padding: 0, margin: 0}}>
+            <ul  style ={{marginLeft:'12px', padding:0}}>
                 {
                   details.map((detail, index) => (
                     <li key={index}>{detail}</li>
@@ -35,8 +35,8 @@ const Section = ({ title, description, imageSrc, details, reverse }) => {
             
           )}
         </Grid>
-        <Grid item xs={12} sm={7}>
-          <img src={imageSrc} alt='jjk' width='100%' />
+        <Grid item xs={12} sm={7} sx={{padding:'20px', background:'#f9fbfe', borderRadius:'12px'}}>
+          <img src={imageSrc} alt={description} width='100%' />
         </Grid>
       </Grid>
     </SectionThemeProvider>
