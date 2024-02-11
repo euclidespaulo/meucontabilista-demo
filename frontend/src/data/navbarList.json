@@ -1,0 +1,7 @@
+
+[   
+    { "label": "", "to": "", "fontSize": "90px", "src":"src/assets/logo.svg", "width":"120px"},
+    { "label": "Book", "to": "/Book", "fontSize": "20px" }
+   
+  ]
+  
