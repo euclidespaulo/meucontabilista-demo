@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Box, Button, Typography} from "@mui/material";
 import { AnimationText } from '../animation/AnimationText';
-import IntroThemeProvider from '../../styles/home/introThemeProvider';
+import IntroThemeProvider from '../../styles/homePage/introThemeProvider';
 
 
 const HomeIntro = ({title, description, button, br}) => {

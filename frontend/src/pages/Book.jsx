@@ -4,9 +4,11 @@ import Datepicker from "../Components/form/Datepicker";
 import Selects from "../Components/form/Selects";
 import TextFields from "../Components/form/TextFields";
 import CheckboxComponent from "../Components/form/CheckboxComponent";
-import {useForm} from 'react-hook-form'
-import AxiosInstance from '../api/Axios'
+import {useForm} from 'react-hook-form';
+import AxiosInstance from '../api/Axios';
 import dayjs from "dayjs";
+import Form from '../data/locales/en/Form.json';
+
 
 const Book = () => {
     const {handleSubmit, reset, setValue, control} = useForm()
@@ -39,9 +41,13 @@ const Book = () => {
     <Stack sx={{background:'#f3f7fd', paddingTop:'30px', paddingLeft:'200px', paddingRight:'200px'}}>
         <form onSubmit={handleSubmit(submission)}>
             <Box sx={{marginBottom:'24px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
-                <Typography sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
-                    BOOK A MEETING
-                </Typography>
+                {
+                    Form.map((item, index) => (
+                    <Typography key={index} sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
+                        {item.t}
+                     </Typography>
+                    ))
+                }
             </Box>
             <Stack sx={{padding:'30px', boxShadow: 2, borderRadius: '8px', background: '#ffffff' }} direction='column' >
                 <Grid container spacing={3}>   
