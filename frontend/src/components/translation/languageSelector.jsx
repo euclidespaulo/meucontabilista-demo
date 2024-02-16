@@ -29,11 +29,11 @@ const LanguageSelector = () => {
   return (
     <Box sx={{flexDirection:'column-reverse'}}>
       <Dropdown>
-        <BaseMenuButton> <img src="src/assets/language.svg" alt="Language" /> </BaseMenuButton>
+        <MenuButton> <img src="src/assets/language.svg" alt="Language" /> </MenuButton>
         <Menu slots={{ listbox: Listbox }}>
           {languages.map((language) => (
             <MenuItem 
-              className={language.code === i18n.language && 'selected'}
+              sx={language.code === i18n.language && 'selected'}
               key={language.code} 
               onClick={createHandleMenuClick(language)}>
               {language.lang}
@@ -171,14 +171,12 @@ const MenuButton = styled(BaseMenuButton)(
   font-size: 0.875rem;
   line-height: 1.5;
   padding: 8px 16px;
-  border-radius: 8px;
   color: white;
   transition: all 150ms ease;
   cursor: pointer;
-  background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-  border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
+  background:#f3f7fd;
   color: ${theme.palette.mode === 'dark' ? grey[200] : grey[900]};
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  
 
   &:hover {
     background: ${theme.palette.mode === 'dark' ? grey[800] : grey[50]};

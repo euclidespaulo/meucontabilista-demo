@@ -14,7 +14,7 @@ const NavBar = () => {
 
 
   return (
-    <Box sx={{display:'flex', flexDirection:''}}>
+    <Box sx={{display: 'flex'}}>
       <BottomNavigation
         sx={{background: '#f3f7fd', marginTop:'20px', marginLeft:'130px'}} 
         showLabels
@@ -35,7 +35,7 @@ const NavBar = () => {
               sx={{ 
                     color:'#707a86', 
                     fontSize:navItem.fontSize,
-                    justifyContent: index === 3 & 'rigth' 
+                    justifyContent:'center'
                   }}
               icon={<img src={navItem.src} height={navItem.height} width={navItem.width} />}
               
@@ -46,11 +46,6 @@ const NavBar = () => {
         }
         <BottomNavigationAction
           component={LanguageSelector}
-          sx={{
-            color: '#707a86',
-            fontSize: '16px', // Adjust the font size as needed
-            justifyContent: 'right', // Align to the right
-          }}
         />
       </BottomNavigation>
     </Box>

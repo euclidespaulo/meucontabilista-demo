@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography } from "@mui/material";
-import SectionThemeProvider from '../../styles/home/sectionThemeProvider';
+import SectionThemeProvider from '../../styles/homePage/sectionThemeProvider';
 
 
 

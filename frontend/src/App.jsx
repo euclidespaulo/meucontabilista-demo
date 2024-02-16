@@ -3,8 +3,7 @@ import Home from './pages/Home';
 import Book from './pages/Book';
 import NavBar from './Components/common/NavBar';
 import Footer from './Components/common/Footer';
-import {useTranslation, Trans} from 'react-i18next'
-
+import { useTranslation } from 'react-i18next';
 
 
 function App() {
