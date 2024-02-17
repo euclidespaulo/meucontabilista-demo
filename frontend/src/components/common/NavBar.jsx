@@ -7,14 +7,14 @@ import navList from '../../data/navbarList.json';
 import LanguageSelector from '../translation/languageSelector';
 
 
-const NavBar = () => {
+const Navbar = () => {
   const [value, setValue] = React.useState(0);
   const location = useLocation();
   const path = location.pathname
 
 
   return (
-    <Box sx={{display: 'flex'}}>
+    <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
       <BottomNavigation
         sx={{background: '#f3f7fd', marginTop:'20px', marginLeft:'130px'}} 
         showLabels
@@ -52,4 +52,4 @@ const NavBar = () => {
   );
 }
 
-export default NavBar;
+export default Navbar;

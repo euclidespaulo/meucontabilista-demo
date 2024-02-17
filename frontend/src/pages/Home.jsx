@@ -10,11 +10,12 @@ import sectionTextPT from '../data/locales/pt/sectionText.json';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
+
   const introText = i18n.language === 'pt' ? introTextPT : introTextEN;
   const sectionText = i18n.language === 'pt' ? sectionTextPT : sectionTextEN;
 
   // Convert the "br" object values into an array
-  const brList = Object.values(introText.br); // Set brList to an empty array if introText.br is undefined
+  const brList = introText.br ? Object.values(introText.br) : [];  // Set brList to an empty array if introText.br is undefined
 
   const renderSection = (section) => {
     // Render logic specific to sectionText structure
@@ -33,12 +34,15 @@ const Home = () => {
     <Stack direction='column'>
       <HomeIntro
         title={t(introText.title)}
-        br={brList.map((brItem) => t(brItem))}
+        br={brList.map((brItem, index) => (
+          <span key={index}>{t(brItem)}</span>
+        ))}
         description={t(introText.description)}
         button={t(introText.button)}
       />
-      {renderSection(sectionText['1'])}
-      {renderSection(sectionText['2'])}
+      
+      {sectionText['1'] && renderSection(sectionText['1'])}
+      {sectionText['2'] && renderSection(sectionText['2'])}
     </Stack>
   );
 };

@@ -17,7 +17,7 @@ i18n
     debug: true,
     fallbackLng: 'en',
     returnObjects: true,
-    ns: ['introText', 'sectionText'],
+    ns: ['introText', 'sectionText', 'Book'],
     defaultNS: 'introText',
     backend: {
       loadPath: 'locales/{{lng}}/{{ns}}.json'}

@@ -1,20 +1,18 @@
 import {Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Book from './pages/Book';
-import NavBar from './Components/common/NavBar';
+import Navbar from './Components/common/Navbar';
 import Footer from './Components/common/Footer';
-import { useTranslation } from 'react-i18next';
 
 
-function App() {
-  const {t} = useTranslation();
-  
+function App() { 
+
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Routes>
-        <Route path=""  element={<Home/>}/>
-        <Route path="/Book"  element={<Book/>}/>
+        <Route path="/"  exact element={<Home/>}/>
+        <Route path="/Book"  element={<Book/>} key='book-route'/>
       </Routes>
       <Footer/>
     </>
