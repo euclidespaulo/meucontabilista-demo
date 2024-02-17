@@ -1,24 +1,29 @@
-[  
-     {
-        "t":"Book a Meeting"
+[
+    {
+        "t": "Agendar uma Reunião"
     },
     {
-        "fn":"First name", "ln":"Last name"
-    },
-    {   "ce":"Company email", "cp":"Cell phone"
-
+        "fn": "Primeiro nome",
+        "ln": "Sobrenome"
     },
     {
-        "cn":"Company name", "cz":"Company Size"
+        "ce": "E-mail da empresa",
+        "cp": "Telefone celular"
     },
     {
-        "sd":"Start Date", "ed":"End Date"
+        "cn": "Nome da empresa",
+        "cz": "Tamanho da empresa"
     },
     {
-        "if":[
-            "Audit and Assurance", "Taxation", "Financial Analysis"
+        "sd": "Data de Início",
+        "ed": "Data de Término"
+    },
+    {
+        "if": [
+            "Auditoria e Asseguração",
+            "Tributação",
+            "Análise Financeira"
         ],
-
-        "hh":"How can we help?"
+        "hh": "Como podemos ajudar?"
     }
 ]
