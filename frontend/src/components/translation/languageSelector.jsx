@@ -20,7 +20,6 @@ const LanguageSelector = () => {
 
   const createHandleMenuClick = (language) => {
     return () => {
-      console.log(`Clicked on ${language.lang}`);
       changeLanguage(language.code);
     };
   };
@@ -33,7 +32,6 @@ const LanguageSelector = () => {
         <Menu slots={{ listbox: Listbox }}>
           {languages.map((language) => (
             <MenuItem 
-              sx={language.code === i18n.language && 'selected'}
               key={language.code} 
               onClick={createHandleMenuClick(language)}>
               {language.lang}
@@ -146,8 +144,6 @@ const MenuItem = styled(BaseMenuItem)(
   padding: 8px;
   border-radius: 8px;
   cursor: default;
-  user-select: none;
-
   &:last-of-type {
     border-bottom: none;
   }

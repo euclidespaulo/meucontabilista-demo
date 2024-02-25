@@ -1,29 +1,31 @@
-[
-    {
-        "t": "Agendar uma Reunião"
-    },
-    {
-        "fn": "Primeiro nome",
-        "ln": "Sobrenome"
-    },
-    {
-        "ce": "E-mail da empresa",
-        "cp": "Telefone celular"
-    },
-    {
-        "cn": "Nome da empresa",
-        "cz": "Tamanho da empresa"
-    },
-    {
-        "sd": "Data de Início",
-        "ed": "Data de Término"
-    },
-    {
-        "if": [
-            "Auditoria e Asseguração",
-            "Tributação",
-            "Análise Financeira"
-        ],
-        "hh": "Como podemos ajudar?"
-    }
-]
+{
+     "t": "Agendar uma Reunião",
+
+     "fn": "Primeiro nome",
+    
+     "ln": "Sobrenome",
+
+     "ce": "E-mail da empresa",
+
+    "cp": "Telefone celular",
+    
+    "cn": "Nome da empresa",
+
+    "cz": "Tamanho da empresa",
+    
+    "sd": "Data de Início",
+    
+    "ed": "Data de Término",
+
+     "a": "Areas de interesse",
+
+     "b":"Auditoria e Asseguração",
+
+     "c":"Tributação",
+
+     "d":"Análise Financeira",
+
+    "hh": "Como podemos ajudar?"
+
+    
+}
