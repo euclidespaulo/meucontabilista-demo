@@ -1,24 +1,29 @@
-[  
-     {
-        "t":"Book a Meeting"
-    },
-    {
-        "fn":"First name", "ln":"Last name"
-    },
-    {   "ce":"Company email", "cp":"Cell phone"
+{
+    "t": "Schedule a Meeting",
+ 
+    "fn": "First Name",
+     
+    "ln": "Last Name",
+ 
+    "ce": "Company Email",
+ 
+    "cp": "Mobile Phone",
+     
+    "cn": "Company Name",
+ 
+    "cz": "Company Size",
+     
+    "sd": "Start Date",
+     
+    "ed": "End Date",
+ 
+    "a": "Interested fields",
 
-    },
-    {
-        "cn":"Company name", "cz":"Company Size"
-    },
-    {
-        "sd":"Start Date", "ed":"End Date"
-    },
-    {
-        "if":[
-            "Audit and Assurance", "Taxation", "Financial Analysis"
-        ],
-
-        "hh":"How can we help?"
-    }
-]
+    "b": "Audit and Assurance",
+ 
+    "c": "Taxation",
+ 
+    "d": "Financial Analysis",
+ 
+    "hh": "How can we help?"
+ }
