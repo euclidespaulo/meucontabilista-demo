@@ -147,7 +147,7 @@ const Book = () => {
                 </Grid>
                 <Grid container>   
                     <Grid item xs={12} sm={12}>
-                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(convert.a)}</Typography>
+                        <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.a)}</Typography>
                         <MultilineTextFields
                             name='Multifield'
                             label='Let us know'
