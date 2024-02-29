@@ -3,13 +3,15 @@ import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
 
 
-export default function MultilineTextFields ({label, name, control}) {
+export default function MultilineTextFields ({label, name, control, defaultValue}) {
  
   return ( 
     <Controller
       name={name}
       control={control}
+      defaultValue={defaultValue}
       render={({ field, fieldState: { error }, formState }) => (
+
       <TextField
       sx={{ width: '100%' }}
       id="outlined-multiline-static"

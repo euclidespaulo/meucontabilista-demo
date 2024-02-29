@@ -1,10 +1,13 @@
-import { Stack, Box, Button, Grid, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Stack, Box, Button, Grid, Typography, Snackbar} from "@mui/material";
+import MuiAlert from '@mui/material/Alert';
 import MultilineTextFields from "../Components/form/MultilineTextFields";
 import Datepicker from "../Components/form/Datepicker";
 import Selects from "../Components/form/Selects";
 import TextFields from "../Components/form/TextFields";
 import CheckboxComponent from "../Components/form/CheckboxComponent";
 import {useForm} from 'react-hook-form';
+import {DevTool} from '@hookform/devtools'
 import AxiosInstance from '../api/Axios';
 import dayjs from "dayjs";
 import { useTranslation } from 'react-i18next';
@@ -13,9 +16,19 @@ import FormPT from '../data/locales/pt/Form.json';
 
 
 
+
 const Book = () => {
-    const {handleSubmit, reset, setValue, control} = useForm()
-    const submission = async (data) => {
+
+    const {
+        register,
+        control, 
+        handleSubmit, 
+        reset,
+        formState: {errors, isSubmitting , isSubmitSuccessful}, 
+    } = useForm();
+
+
+    const onSubmit = async (data) => {
         try {
             const StartDate = dayjs(data.Startdate["$d"]).format('YYYY-MM-DDTHH:mm:ssZ');
             const EndDate = dayjs(data.Enddate["$d"]).format('YYYY-MM-DDTHH:mm:ssZ');
@@ -33,12 +46,27 @@ const Book = () => {
                 taxation: data.Taxation || false,
                 financial_analysis: data.FinancialAnalysis || false,
                 comment: data.Multifield,
-            });
+            });  
+
 
         } catch (error) {
             console.error("Error submitting form:", error);
         }
     };
+
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+
+    const handleCloseSnackbar = () => {
+      setOpenSnackbar(false);
+    };
+  
+    useEffect(() => {
+      if (isSubmitSuccessful) {
+        reset();
+        setOpenSnackbar(true);
+      }
+    }, [isSubmitSuccessful]);
+
 
     const {t, i18n} = useTranslation();
 
@@ -46,7 +74,7 @@ const Book = () => {
 
  return(
     <Stack sx={{background:'#f3f7fd', paddingTop:'30px', paddingLeft:'200px', paddingRight:'200px'}}>
-        <form onSubmit={handleSubmit(submission)}>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <Box sx={{marginBottom:'24px', padding:8, background:'#4997f2', borderRadius:'8px', fontWeight: 'bold' }}>
                     <Typography sx={{color:'#fff', fontSize:24, textAlign:'center'}}> 
                         {t(FormText.t)}
@@ -57,43 +85,67 @@ const Book = () => {
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{margin:'6px', textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.fn)}</Typography>
                         <TextFields
-                            name='Firstname'
+                            {...register('Firstname', {
+                                required:{
+                                    value: true,
+                                    message:`* * * ${t(FormText.fn)} required`
+                                }
+                            })}
                             label='John'
                             control={control}  
                         />
+                        <Typography sx={{color:'red', fontSize:'12px'}}>{errors.Firstname?.message}</Typography>
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{margin:'6px',textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.ln)}</Typography>
                         <TextFields
-                            name='Lastname'
+                            {...register('Lastname', {
+                                required:{
+                                    value: true,
+                                    message:`* * * ${t(FormText.ln)} required`
+                                }
+                            })}
                             label='Weack'
                             control={control}
                         />
+                        <Typography sx={{color:'red', fontSize:'12px'}}>{errors.Lastname?.message}</Typography>
                     </Grid>
                 </Grid> 
                 <Grid container spacing={3} >   
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{margin:'6px', textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.ce)}</Typography>
                         <TextFields
-                            name='companyEmail'
+                            {...register('companyEmail', {
+                                required:{
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                    message:`* * * ${t(FormText.ce)} format`
+                                }
+                            })}
                             label='John@gmail.com'
                             control={control}
                         />
+                        <Typography sx={{color:'red', fontSize:'12px'}}>{errors.companyEmail?.message}</Typography>
                     </Grid>
                     <Grid item xs={12} sm={6} >
                         <Typography sx={{margin:'6px', textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.cp)}</Typography>
                         <TextFields
-                            name='companyPhone'
+                            {...register('companyPhone',  {
+                                required:{
+                                    value: true,
+                                    message:`* * * ${t(FormText.cp)} required`
+                                }
+                            })}
                             label='+1 401 334 7653'
                             control={control}
                         />
+                        <Typography sx={{color:'red', fontSize:'12px'}}>{errors.companyPhone?.message}</Typography>
                     </Grid>
                 </Grid> 
                 <Grid container spacing={3} >   
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.cn)}</Typography>
                         <TextFields
-                            name='CompanyName'
+                            {...register('CompanyName')}
                             label='Google'
                             control={control}
                         />
@@ -101,7 +153,7 @@ const Book = () => {
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.cz)}</Typography>
                         <Selects
-                            name='CompanySize'
+                            {...register('CompanySize')}
                             label='Select'
                             control={control}
                         />
@@ -111,7 +163,7 @@ const Book = () => {
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.sd)}</Typography>
                         <Datepicker
-                            name='Startdate'
+                            {...register('Startdate')}
                             label='Day and time'
                             control={control}
                         />
@@ -119,7 +171,7 @@ const Book = () => {
                     <Grid item xs={12} sm={6}>
                         <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.ed)}</Typography>
                         <Datepicker
-                            name='Enddate'
+                            {...register('Enddate')}
                             label='Day and time'
                             control={control}
                         />
@@ -129,17 +181,17 @@ const Book = () => {
                     <Grid item >
                         <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.a)}</Typography>
                         <CheckboxComponent
-                            name='AuditandAssurance'
+                            {...register('AuditandAssurance')}
                             label={t(FormText.b)}
                             control={control}
                         />
                         <CheckboxComponent
-                            name='Taxation'
+                            {...register('Taxation')}
                             label={t(FormText.b)}
                             control={control}
                         />
                         <CheckboxComponent
-                            name='FinancialAnalysis'
+                            {...register('FinancialAnalysis')}
                             label={t(FormText.c)}
                             control={control}
                         />
@@ -149,15 +201,22 @@ const Book = () => {
                     <Grid item xs={12} sm={12}>
                         <Typography sx={{textAlign: 'left', fontWeight: 'bold', fontFamily: 'Untitled sans, sans-serif'}}> {t(FormText.a)}</Typography>
                         <MultilineTextFields
-                            name='Multifield'
+                            {...register('Multifield')}
                             label='Let us know'
                             control={control}
+                            defaultValue=""
                         />
                     </Grid>
                 </Grid> 
-                <Button variant="contained" type="submit" sx={{width:'100%', marginTop:2}}> {t(FormText.t)}</Button>
+                <Button variant="contained" type="submit" disabled={isSubmitting} sx={{width:'100%', marginTop:2}}> {t(FormText.t)}</Button>
             </Stack>
         </form> 
+        <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+            <MuiAlert elevation={6} variant="filled" onClose={handleCloseSnackbar} severity="success">
+                    Successfully Submitted
+            </MuiAlert>
+        </Snackbar>
+        <DevTool control={control} />
     </Stack>
     )
 }
