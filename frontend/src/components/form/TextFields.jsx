@@ -7,7 +7,9 @@ export default function TextFields({ label, name, control }) {
     <Controller
       name={name}
       control={control}
+      defaultValue={""}
       render={({ field, fieldState: { error }, formState }) => (
+
         <TextField
           id="outlined-basic"
           label={label}

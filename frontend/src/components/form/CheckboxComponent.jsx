@@ -11,7 +11,11 @@ export default function CheckboxComponent({ label, name, control }) {
       control={control}
       render={({ field }) => (
         <FormControlLabel
-          control={<Checkbox {...field} />}
+          control={
+          <Checkbox 
+          {...field} 
+          />
+          }
           label={label}
           sx={{ marginBottom:'15px'}}
         />

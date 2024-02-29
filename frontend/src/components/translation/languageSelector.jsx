@@ -5,6 +5,7 @@ import { Menu } from '@mui/base/Menu';
 import { MenuButton as BaseMenuButton} from '@mui/base/MenuButton';
 import { MenuItem as BaseMenuItem, menuItemClasses } from '@mui/base/MenuItem';
 import { styled } from '@mui/system';
+import { CssTransition } from '@mui/base/Transitions';
 import { useTranslation } from 'react-i18next';
 import languages from '../../data/locales/languages.json'
 import { Box } from '@mui/material';
@@ -21,6 +22,7 @@ const LanguageSelector = () => {
   const createHandleMenuClick = (language) => {
     return () => {
       changeLanguage(language.code);
+      console.log(`clicked on ${language.lang}`)
     };
   };
 

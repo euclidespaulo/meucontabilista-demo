@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Controller } from 'react-hook-form';
 
-export default function Selects({ label, name, control }) {
+export default function Selects({ label, name, control}) {
 
   return (
     <div>
