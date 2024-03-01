@@ -27,24 +27,24 @@ jobs:
           cd backend
           python -m venv venv
           source venv/bin/activate
-      
+
       - name: Install dependencies
         run: |
-        cd backend
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+          cd backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Collect static files 
         run: |
-        cd backend
-        python manage.py collectstatic --noinput
-        
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)jjj
+          cd backend
+          python manage.py collectstatic --noinput
+
+      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
         run: |
-        cd backend 
-        zip release.zip ./* -r
+          cd backend 
+          zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
@@ -72,7 +72,6 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      
       - name: Login to Azure
         uses: azure/login@v1
         with:
@@ -86,4 +85,3 @@ jobs:
         with:
           app-name: 'meucontabilista-backend'
           slot-name: 'Production'
-          
