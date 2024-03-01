@@ -64,6 +64,8 @@ TEMPLATES = [
     },
 ]
 
+STATIC_ROOT = BASE_DIR/'staticfiles'
+
 WSGI_APPLICATION = 'crud.wsgi.application'
 
 
