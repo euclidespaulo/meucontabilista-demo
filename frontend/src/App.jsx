@@ -1,8 +1,8 @@
 import {Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Book from './pages/Book';
-import Navbar from './Components/common/Navbar';
-import Footer from './Components/common/Footer';
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
 
 
 function App() { 
