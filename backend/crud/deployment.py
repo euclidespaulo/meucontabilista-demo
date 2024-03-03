@@ -23,7 +23,7 @@ MIDDLEWARE = [
 ]
 
 
-# CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ['https://green-ocean-02c38840f.5.azurestaticapps.net']
 
 STORAGES = {
     "default": {
