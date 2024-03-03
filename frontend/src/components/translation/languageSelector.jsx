@@ -30,7 +30,7 @@ const LanguageSelector = () => {
   return (
     <Box sx={{flexDirection:'column-reverse'}}>
       <Dropdown>
-        <MenuButton> <img src="src/assets/language.svg" alt="Language" /> </MenuButton>
+        <MenuButton> <img src="/assets/language.svg" alt="Language" /> </MenuButton>
         <Menu slots={{ listbox: Listbox }}>
           {languages.map((language) => (
             <MenuItem 

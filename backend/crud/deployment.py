@@ -49,3 +49,4 @@ DATABASES = {
 }
 
 STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")

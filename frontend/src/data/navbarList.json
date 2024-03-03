@@ -1,6 +1,6 @@
 
 [   
-    { "label": "", "to": "", "fontSize": "90px", "src":"src/assets/logo.svg", "width":"120px"}
+    { "label": "", "to": "", "fontSize": "90px", "src":"/assets/logo.svg", "width":"120px"}
    
   ]
   
