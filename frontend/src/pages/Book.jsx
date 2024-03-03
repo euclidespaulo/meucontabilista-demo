@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Stack, Box, Button, Grid, Typography, Snackbar} from "@mui/material";
 import MuiAlert from '@mui/material/Alert';
-import MultilineTextFields from "../Components/form/MultilineTextFields";
-import Datepicker from "../Components/form/Datepicker";
-import Selects from "../Components/form/Selects";
-import TextFields from "../Components/form/TextFields";
-import CheckboxComponent from "../Components/form/CheckboxComponent";
+import MultilineTextFields from "../components/form/MultilineTextFields";
+import Datepicker from "../components/form/Datepicker";
+import Selects from "../components/form/Selects";
+import TextFields from "../components/form/TextFields";
+import CheckboxComponent from "../components/form/CheckboxComponent";
 import {useForm} from 'react-hook-form';
 import {DevTool} from '@hookform/devtools'
 import AxiosInstance from '../api/Axios';

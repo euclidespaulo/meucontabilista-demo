@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack } from '@mui/material';
-import HomeIntro from '../Components/common/homeIntro';
-import Section from '../Components/common/section';
+import HomeIntro from '../components/common/homeIntro';
+import Section from '../components/common/section';
 import { useTranslation } from 'react-i18next';
 import introTextEN from '../data/locales/en/introText.json';
 import introTextPT from '../data/locales/pt/introText.json';
