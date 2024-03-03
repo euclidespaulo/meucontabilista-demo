@@ -6,7 +6,7 @@
       "detail1": "Custom Financial Reports: Receive meticulously crafted financial reports customized to your unique business requirements, offering a deep insight into your company's performance.",
       "detail2": "Comparative Analysis: Benchmark your financial standing against industry standards with our comparative analysis reports, providing valuable insights for strategic planning."
     },
-    "imageSrc": "src/assets/Sheet1.svg",
+    "imageSrc": "/assets/Sheet1.svg",
     "reverse": false
   },
   "2": {
@@ -20,7 +20,7 @@
       "detail5": "Fixed Assets and accruals and deferrals",
       "detail6": "Reporting in a specific format, if applicable"
     },
-    "imageSrc": "src/assets/Chart.svg",
+    "imageSrc": "/assets/Chart.svg",
     "reverse": true
   }
 }

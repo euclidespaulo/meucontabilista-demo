@@ -6,7 +6,7 @@
       "detail1": "Relatórios Financeiros Personalizados: Receba relatórios financeiros meticulosamente elaborados, personalizados de acordo com as necessidades únicas do seu negócio, oferecendo uma visão profunda do desempenho da sua empresa.",
       "detail2": "Análise Comparativa: Avalie sua posição financeira em relação aos padrões da indústria com nossos relatórios de análise comparativa, fornecendo insights valiosos para o planejamento estratégico."
     },
-    "imageSrc": "src/assets/Sheet1.svg",
+    "imageSrc": "/assets/Sheet1.svg",
     "reverse": false
   },
   "2": {
@@ -20,7 +20,7 @@
       "detail5": "Ativos Fixos e provisões e diferimentos",
       "detail6": "Relatórios em um formato específico, se aplicável"
     },
-    "imageSrc": "src/assets/Chart.svg",
+    "imageSrc": "/assets/Chart.svg",
     "reverse": true
   }
 }
