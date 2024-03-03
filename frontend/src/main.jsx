@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {BrowserRouter as Router} from 'react-router-dom'
-import './Components/translation/i18n.jsx'
+import './components/translation/i18n.jsx'
 import LoadingSpinner from './Components/common/Loading.jsx'
 
 
